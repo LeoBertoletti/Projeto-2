@@ -3,6 +3,12 @@ body {
     background-size: cover;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+* {
+    font-family: 'poppins', sans-serif;
+}
+
 #main_text {
     display: flex;
     flex-direction: column;
