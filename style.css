@@ -1,12 +1,21 @@
-body {
-    background-image: url(https://media.tenor.com/flrzm9Gz3CQAAAAC/kotonoha-no-niwa-rain.gif);
-    background-size: cover;
-}
-
 @import url('https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600&display=swap');
 
 * {
     font-family: 'poppins', sans-serif;
+}
+
+.background-image {
+    position: fixed;
+    z-index: -5;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    background-image: url("Sources/ezgif-2-3ec8087623.gif");
+    background-size: cover;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    filter: blur(3px);
 }
 
 #main_text {
