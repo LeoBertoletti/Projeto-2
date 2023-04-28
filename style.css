@@ -18,6 +18,30 @@
     filter: blur(3px);
 }
 
+#main_temp {
+    text-align: right;
+    font-size: 55px;
+}
+
+
+#texto-box {
+    display: flex;
+    text-align: right;
+    font-size: 24px;
+    flex-direction: column;
+}
+
+#main_tempmim {
+    text-align: center;
+    font-size: 22px;
+}
+
+button {
+    align-items: center;
+    background-color: transparent;
+    border-color: transparent;
+}
+
 #top {
     display: flex;
     flex-direction: row;
@@ -50,10 +74,6 @@
     margin: auto;
     margin-top: -50px;
     margin-bottom: 50px;
-}
-
-#main_temp {
-    text-align: center;
 }
 
 .container-slide {
