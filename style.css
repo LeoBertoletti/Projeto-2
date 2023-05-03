@@ -153,15 +153,21 @@ button {
 }
 
 .card {
+    color: white;
     font-size: 58%;
     margin-left: 0.1%;
     border-radius: 16px;
     height: 200px;
     width: 150px;
-    background-color: rgba(130, 130, 130, 0.484);
+    background-color: rgba(21, 21, 21, 0.601);
     box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.75);
     text-align: center;
     opacity: 80%;
+}
+
+#img_temp,
+.cardIcon {
+    filter: invert();
 }
 
 @keyframes card_hover {
@@ -175,4 +181,8 @@ button {
     animation-name: card_hover;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
+}
+
+.card:active {
+    box-shadow: 0px 0px 3px 2px rgb(255, 255, 255);
 }
