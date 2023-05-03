@@ -65,6 +65,7 @@
 }
 
 button {
+    width: fit-content;
     align-items: center;
     background-color: transparent;
     border-color: transparent;
@@ -151,12 +152,12 @@ button {
 
 @keyframes card_hover {
     to {
-        filter: blur(0%);
+        filter: blur(2px);
     }
 }
 
 .card:hover {
     animation-name: card_hover;
-    animation-duration: 0.2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
