@@ -80,6 +80,12 @@ button {
     align-items: center;
 }
 
+#search-div {
+    display: flex;
+    justify-content: center;
+    margin-top: -4.5%;
+}
+
 #main_text {
     max-width: 100vw;
     font-size: 300%;
@@ -89,7 +95,7 @@ button {
 #search {
     display: flex;
     height: 100%;
-    width: 26%;
+    width: 40%;
     border-radius: 20px;
     border-color: black;
     text-align: center;
