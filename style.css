@@ -73,6 +73,7 @@ button {
     box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.384);
 }
 
+
 #top {
     display: flex;
     flex-direction: row;
@@ -166,6 +167,7 @@ button {
 @keyframes card_hover {
     to {
         box-shadow: 0px 0px 3px 2px rgb(255, 255, 255);
+
     }
 }
 
