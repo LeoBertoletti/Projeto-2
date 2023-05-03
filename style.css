@@ -69,6 +69,7 @@ button {
     align-items: center;
     background-color: transparent;
     border-color: transparent;
+    width: 100%;
     box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.384);
 }
 
@@ -145,7 +146,7 @@ button {
     height: 200px;
     width: 150px;
     background-color: rgba(130, 130, 130, 0.484);
-    box-shadow: 0% 10% 50% 10% rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.75);
     text-align: center;
     opacity: 80%;
 }
