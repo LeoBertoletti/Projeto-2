@@ -124,7 +124,7 @@ button {
     align-items: center;
     overflow-x: auto;
     width: max-content;
-    gap: 0.5%;
+    gap: 5px;
     min-height: 210px;
 }
 
@@ -137,7 +137,6 @@ button {
 .cardIcon {
     max-width: 50%;
 }
-
 
 .card {
     font-size: 58%;
@@ -153,14 +152,12 @@ button {
 
 @keyframes card_hover {
     to {
-        filter: blur(2px);
-        background-image: url(Sources/pngwing.com.png);
-
+        box-shadow: 0px 0px 3px 2px rgb(255, 255, 255);
     }
 }
 
 .card:hover {
     animation-name: card_hover;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
 }
