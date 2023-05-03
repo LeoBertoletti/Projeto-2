@@ -19,7 +19,7 @@
 
 #main_temp {
     text-align: right;
-    font-size: 300%;
+    font-size: 5vw;
 }
 
 
@@ -153,6 +153,8 @@ button {
 @keyframes card_hover {
     to {
         filter: blur(2px);
+        background-image: url(Sources/pngwing.com.png);
+
     }
 }
 
