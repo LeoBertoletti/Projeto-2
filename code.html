@@ -21,7 +21,7 @@
         <img id="img_temp" src="Sources/chuva.png">
         <div id="main_tempmax">18°</div>
         <div id="texto-box">
-            <div id="main_date">Quarta-feira</div>
+            <div id="main_date">Quinta-feira</div>
             <div id="main_temp">18°</div>
             <div id="main_weather">Chuvoso</div>
             <div id="main_local">Porto Alegre</divi>
@@ -32,7 +32,14 @@
     </div>
     <div class="container-slide">
         <div id="slider">
-
+            <div class="card">
+                <h1 id="dia_${cardIndex}">Ontem</h1>
+                <img class="cardIcon" id="img_${cardIndex}" src="Sources/chuva.png">
+                <div id="card_temps">
+                    <h2 id="mim_${cardIndex}">22°</h2>
+                    <h3 id="max_${cardIndex}">18°</h3>
+                </div>
+            </div>
         </div>
     </div>
     <script src="createCards.js"></script>

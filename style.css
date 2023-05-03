@@ -19,7 +19,7 @@
 
 #main_temp {
     text-align: right;
-    font-size: 300%;
+    font-size: 5vw;
 }
 
 
@@ -65,6 +65,7 @@
 }
 
 button {
+    width: fit-content;
     align-items: center;
     background-color: transparent;
     border-color: transparent;
@@ -152,12 +153,14 @@ button {
 
 @keyframes card_hover {
     to {
-        filter: blur(0%);
+        filter: blur(2px);
+        background-image: url(Sources/pngwing.com.png);
+
     }
 }
 
 .card:hover {
     animation-name: card_hover;
-    animation-duration: 0.2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
