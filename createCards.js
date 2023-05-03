@@ -12,6 +12,7 @@ let amanha = new Date(new Date(today.setDate(today.getDate() + 1)))
 
 createCard = () => {
     console.log(today)
+    console.log(amanha)
     let cardDiv = document.createElement("div")
     cardDiv.className = "card"
     cardDiv.id = `card-${cardIndex}`
