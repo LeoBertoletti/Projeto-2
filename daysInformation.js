@@ -9,9 +9,11 @@
         const weatherInfo = document.getElementById("weather-info");
         const currentTemp = data.current_weather.temperature;
         const days = data.daily.time
+
         var c = 0;
     
         let html = "";
+
         days.forEach(element => {
           const minTemp = data.daily.temperature_2m_min[c];
           const maxTemp = data.daily.temperature_2m_max[c];
@@ -26,11 +28,18 @@
           const dateToday = new Date (timestampToday * 1000);
           const todayName = dateToday.toLocaleDateString('pt-BR', { weekday: 'long' });
 
-          // Get dayName:
+          // Get dayNames:
 
           const timestampDayName = data.daily.time[c];
           const dateDayName = new Date(timestampDayName * 1000);
-          const dayOfWeek = dateDayName.toLocaleDateString('pt-BR', { weekday: 'long' });
+          const dayOfWeekLowerCase = dateDayName.toLocaleDateString('pt-BR', { weekday: 'long' });
+          const dayOfWeek = dayOfWeekLowerCase.charAt(0).toUpperCase() + dayOfWeekLowerCase.slice(1).toLowerCase();
+
+          // Get Dates:
+
+          const dayData = dateDayName.getDate().toString().padStart(2, '0');
+          const monthData = (dateDayName.getMonth() + 1).toString().padStart(2, '0');
+          const formattedDate = `${dayData}/${monthData}`;
 
           // Get Sunrise and Sunset Hours:
           
@@ -71,6 +80,16 @@
           }
           else if (c === 93){
             html += `<h1>Amanhã:</h1>
+          <p>Temperatura Mínima: ${minTemp}ºC;</p>
+          <p>Temperatura Máxima: ${maxTemp}ºC;</p>
+          <p>Sensação Térmica: ${apparentTemp}ºC;</p>
+          <p>Descrição do Tempo: ${weatherDescription}</p>
+          <p>Nascer do Sol: ${formattedHourSunrise}</p>
+          <p>Por do Sol: ${formattedHourSunset}</p>
+          <p>Vento: ${windspeed}Km/h</p>`;
+          }
+          else if (c < 86 || c > 98){
+            html += `<h1>${formattedDate}:</h1>
           <p>Temperatura Mínima: ${minTemp}ºC;</p>
           <p>Temperatura Máxima: ${maxTemp}ºC;</p>
           <p>Sensação Térmica: ${apparentTemp}ºC;</p>
