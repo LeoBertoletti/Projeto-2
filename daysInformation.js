@@ -1,98 +1,49 @@
-  
-  function getWeather(lat, lon) {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,weathercode&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,windspeed_10m_max,apparent_temperature_max&current_weather=true&timeformat=unixtime&past_days=92&forecast_days=16&timezone=auto`;
-    alert(url)
+function getWeather(lat, lon) {
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,weathercode&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,windspeed_10m_max,apparent_temperature_max&current_weather=true&past_days=92&forecast_days=16&timezone=auto`;
 
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        const weatherInfo = document.getElementById("weather-info");
-        const currentTemp = data.current_weather.temperature;
-        const days = data.daily.time
-        var c = 0;
-    
-        let html = "";
-        days.forEach(element => {
-          const minTemp = data.daily.temperature_2m_min[c];
-          const maxTemp = data.daily.temperature_2m_max[c];
-          const weatherCode = data.daily.weathercode[c];
-          const weatherDescription = getWeatherDescription(weatherCode);
-          const windspeed = data.daily.windspeed_10m_max[c];
-          const apparentTemp = data.daily.apparent_temperature_max[c];
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      let cardIndex = 0
+      const slider = document.getElementById("slider")
+      slider.innerHTML = ""
+      const days = data.daily.time
+      const dailyCode = data.daily.weathercode
+      const dailyMax = data.daily.temperature_2m_max
+      const dailyMin = data.daily.temperature_2m_min
+      const week = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+      const climas = ['Céu limpo', 'Principalmente limpo', 'Parcialmente nublado', 'Encoberto', 'Névoa', 'Névoa gelada', 'Garoa leve', 'Garoa moderada', 'Garoa densa', 'Garoa congelante leve', 'Garoa congelante densa', 'Chuva fraca', 'Chuva moderada', 'Chuva forte', 'Chuva congelante leve', 'Chuva congelante forte', 'Queda de neve fraca', 'Queda de neve moderada', 'Queda de neve forte', 'Grãos de neve', 'Chuva forte leve', 'Chuva forte moderada', 'Chuva forte violenta', 'Neve fraca', 'Neve forte', 'Trovoada leve ou moderada', 'Trovoada com queda de granizo leve', 'Trovoada com queda de granizo forte']
 
-          // Get todayName:
+      days.forEach(element => {
+        var maxTemp = dailyMax[cardIndex]
+        var minTemp = dailyMin[cardIndex]
+        var day = days[cardIndex]
+        var code = dailyCode[cardIndex]
 
-          const timestampToday = data.current_weather.time;
-          const dateToday = new Date (timestampToday * 1000);
-          const todayName = dateToday.toLocaleDateString('pt-BR', { weekday: 'long' });
+        day = week[new Date(day).getDay()]
 
-          // Get dayName:
+        if (cardIndex === 92) {
+          day = "Hoje"
+        }
 
-          const timestampDayName = data.daily.time[c];
-          const dateDayName = new Date(timestampDayName * 1000);
-          const dayOfWeek = dateDayName.toLocaleDateString('pt-BR', { weekday: 'long' });
-
-          // Get Sunrise and Sunset Hours:
-          
-          const timestampSunrise =  data.daily.sunrise[c];
-          const timestampSunset = data.daily.sunset[c];
-          const dateSunrise = new Date(timestampSunrise * 1000); 
-          const dateSunset = new Date(timestampSunset * 1000);
-          const hoursSunrise = dateSunrise.getHours().toString().padStart(2, '0');
-          const hoursSunset = dateSunset.getHours().toString().padStart(2, '0');
-          const minutesSunrise = dateSunrise.getMinutes().toString().padStart(2, '0');
-          const minutesSunset= dateSunset.getMinutes().toString().padStart(2, '0');
-          const formattedHourSunrise = `${hoursSunrise}:${minutesSunrise}`;
-          const formattedHourSunset =  `${hoursSunset}:${minutesSunset}`;
-
-
-  
-          if (c === 91) {
-            html += `<h1>Ontem:</h1>
-            <p>Temperatura Mínima: ${minTemp}ºC;</p>
-            <p>Temperatura Máxima: ${maxTemp}ºC;</p>
-            <p>Sensação Térmica: ${apparentTemp}ºC;</p>
-            <p>Descrição do Tempo: ${weatherDescription}</p>
-            <p>Nascer do Sol: ${formattedHourSunrise};</p>
-            <p>Por do Sol: ${formattedHourSunset}</p>
-            <p>Vento: ${windspeed}Km/h</p>`;
-            
-          }
-          else if (c === 92){
-            html += `<h1>Hoje:</h1>
-          <p>Temperatura Atual: ${currentTemp}ºC;</p>
-          <p>Temperatura Mínima: ${minTemp}ºC;</p>
-          <p>Temperatura Máxima: ${maxTemp}ºC;</p>
-          <p>Sensação Térmica: ${apparentTemp}ºC;</p>
-          <p>Descrição do Tempo: ${weatherDescription}</p>
-          <p>Nascer do Sol: ${formattedHourSunrise}</p>
-          <p>Por do Sol: ${formattedHourSunset}</p>
-          <p>Vento: ${windspeed}Km/h</p>`;
-          }
-          else if (c === 93){
-            html += `<h1>Amanhã:</h1>
-          <p>Temperatura Mínima: ${minTemp}ºC;</p>
-          <p>Temperatura Máxima: ${maxTemp}ºC;</p>
-          <p>Sensação Térmica: ${apparentTemp}ºC;</p>
-          <p>Descrição do Tempo: ${weatherDescription}</p>
-          <p>Nascer do Sol: ${formattedHourSunrise}</p>
-          <p>Por do Sol: ${formattedHourSunset}</p>
-          <p>Vento: ${windspeed}Km/h</p>`;
-          }
-          else{
-            html += `<h1>${dayOfWeek}:</h1>
-          <p>Temperatura Mínima: ${minTemp}ºC;</p>
-          <p>Temperatura Máxima: ${maxTemp}ºC;</p>
-          <p>Sensação Térmica: ${apparentTemp}ºC;</p>
-          <p>Descrição do Tempo: ${weatherDescription}</p>
-          <p>Nascer do Sol: ${formattedHourSunrise}</p>
-          <p>Por do Sol: ${formattedHourSunset}</p>
-          <p>Vento: ${windspeed}Km/h</p>`;
-          }
-          c++;
-        });
-  
-        weatherInfo.innerHTML = html;
-      })
-      .catch(error => console.log(error));
-  }
+        const cardHTMLContent = `<h1 id="dia_${cardIndex}">${day}</h1>
+                                 <img class="cardIcon" id="img_${cardIndex}" src="Sources/chuva.png">
+                                 <div id="card_temps">
+                                 <h2 id="min_${cardIndex}">${Math.round(maxTemp)}º</h2>
+                                 <h2 id="max_${cardIndex}" style="color:rgb(163, 216, 232);">${Math.round(minTemp)}º</h2>
+                                 </div>`
+        let cardDiv = document.createElement("div")
+        cardDiv.className = "card"
+        cardDiv.id = `card-${cardIndex}`
+        cardDiv.innerHTML = cardHTMLContent
+        slider.appendChild(cardDiv)
+        cardIndex++
+      });
+      document.getElementById("card-92").scrollIntoView({
+        behavior: 'auto',
+        block: 'center',
+        inline: 'center'
+      });
+    })
+    .catch(error => console.log(error));
+}

@@ -1,4 +1,6 @@
 (async () => {
+    const search = document.getElementById("search")
     await getData()
-    createCards(dataGlobal)
+    await createCards(dataGlobal)
+    search.addEventListener("change", getLocation(search.value))
 })();
