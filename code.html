@@ -14,9 +14,9 @@
     <div class="background-image"></div>
     <div id="top">
         <h1 id="main_text">ClimApp</h1>
-    </div>
-    <div id="search-div">
-        <input id="search" type="text" placeholder="Escolha a sua cidade">
+        <div id="search-div">
+            <input id="search" type="text" placeholder="Escolha a sua cidade">
+        </div>
     </div>
     <div id="main_box">
         <div style="padding-top: 2%;">
@@ -37,17 +37,14 @@
     </div>
     <div class="container-slide">
         <div id="slider">
-            <div class="card" onclick="alert('teste')">
-                <h1 id="dia_${cardIndex}">Ontem</h1>
-                <img class="cardIcon" id="img_${cardIndex}" src="Sources/chuva.png">
-                <div id="card_temps">
-                    <h2 id="mim_${cardIndex}">22°</h2>
-                    <h2 id="max_${cardIndex}">18°</h2>
-                </div>
-            </div>
         </div>
     </div>
+    <div id="source-div"><a href="https://open-meteo.com/" id="source">Weather data by Open-Meteo.com</a></div>
+
+    <script src="getDataAPI.js"></script>
     <script src="createCards.js"></script>
+    <script src="mainCard.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
