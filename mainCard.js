@@ -9,10 +9,10 @@ mainCard = (data, id) => {
     day = week[new Date(day).getDay()]
 
     document.getElementById("main_date").innerText = day;
-    document.getElementById("main_temp").innerText = currentTemp;
+    document.getElementById("main_temp").innerText = Math.round(currentTemp) + º;
     document.getElementById("main_weather").innerText = getWeatherDescription(dayCode);
     document.getElementById("main_local").innerText = city;
-    document.getElementById("main_tempmin").innerText = dayMin;
-    document.getElementById("main_tempmax").innerText = dayMax;
+    document.getElementById("main_tempmin").innerText = Math.round(dayMin + º);
+    document.getElementById("main_tempmax").innerText = Math.round(dayMax + º);
 
 }
