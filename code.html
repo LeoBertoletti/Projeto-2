@@ -34,6 +34,17 @@
         </div>
         <button id="more_button" onclick="alert('teste')"> <img id="img_button" src="Sources/icones/arrow.png"></button>
 
+        <button type="button" class="collapsible"><img src="Sources/arrow.png" id="arrow"></button>
+            <div class="content">
+             <p>Vento: 
+                velocidade:
+                temp max: 
+                <p>teste
+                    <p>teste</p>
+                        <p>teste</p>
+                </p>
+             </p>
+            </div>
     </div>
     <div class="container-slide">
         <div id="slider">
@@ -41,6 +52,22 @@
     </div>
     <div id="source-div"><a href="https://open-meteo.com/" id="source">Weather data by Open-Meteo.com</a></div>
 
+        <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
     <script src="getDataAPI.js"></script>
     <script src="createCards.js"></script>
     <script src="getLocation.js"></script>
