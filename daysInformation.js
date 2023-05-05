@@ -35,7 +35,7 @@ function getWeather(lat, lon) {
         let cardDiv = document.createElement("div")
         cardDiv.className = "card"
         cardDiv.onclick = function () {
-          mainCard(dataGlobal, this.id);
+          mainCard(dataGlobal, this.id.replace(/\D/g, ''));
         };
         cardDiv.id = `card-${cardIndex}`
         cardDiv.innerHTML = cardHTMLContent
