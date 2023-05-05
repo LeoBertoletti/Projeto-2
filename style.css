@@ -50,7 +50,7 @@
     float: left;
     text-align: left;
     margin-left: 3%;
-    font-size:20px;
+    font-size: 20px;
     margin-top: 2%;
     padding-left: 5%;
 }
@@ -64,6 +64,7 @@
     width: 25%;
 
 }
+
 #main_temp {
     font-size: 50px;
     font-weight: bold;
@@ -179,7 +180,7 @@ button {
     text-align: center;
     border: 4px;
     border-color: rgba(255, 255, 255, 0);
-    border-style:solid;
+    border-style: solid;
 }
 
 #img_temp,
@@ -191,7 +192,8 @@ button {
     to {
         border: 4px;
         border-color: #a3d8e8;
-        border-style:solid;
+        border-style: solid;
+        filter: blur(2px);
     }
 }
 
