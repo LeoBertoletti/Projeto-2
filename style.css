@@ -161,7 +161,7 @@ button {
 
 #main_box {
     color: white;
-    border-radius: 16px 16px 0px 0px;
+    border-radius: 16px;
     height: 100%;
     width: 37%;
     background-color: rgba(0, 0, 0, 0.71);
