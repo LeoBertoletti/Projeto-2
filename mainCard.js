@@ -11,7 +11,6 @@ mainCard = (data, id) => {
         currentTemp = dayMax
     }
 
-    dayCode = getWeatherDescription(dayCode)
     day = week[new Date(day).getDay()]
 
     document.getElementById("main_date").innerText = day
@@ -20,6 +19,7 @@ mainCard = (data, id) => {
     document.getElementById("main_local").innerText = city
     document.getElementById("main_tempmin").innerText = Math.round(dayMax) + "º"
     document.getElementById("main_tempmax").innerText = Math.round(dayMin) + "º"
+    dayCode = getWeatherDescription(dayCode)
     document.getElementById("img_temp").src = `Sources/icones/${dayCode}.png`
 
     document.getElementById(`card-${id}`).scrollIntoView({

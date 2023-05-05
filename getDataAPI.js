@@ -2,10 +2,9 @@ function getLocationAuto() {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
-                debugger
                 const lat = position.coords.latitude;
                 const lng = position.coords.longitude;
-                return lat
+                getWeather(lat, lng)
             },
             (error) => {
                 console.error("Error getting user location:", error);
