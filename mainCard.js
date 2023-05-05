@@ -21,4 +21,9 @@ mainCard = (data, id) => {
     document.getElementById("main_tempmin").innerText = Math.round(dayMax) + "º"
     document.getElementById("main_tempmax").innerText = Math.round(dayMin) + "º"
     document.getElementById("img_temp").src = `http://127.0.0.1:3000/Sources/icones/${dayCode}.png`
+    document.getElementById(`card-${id}`).scrollIntoView({
+        behavior: 'auto',
+        block: 'center',
+        inline: 'center'
+    });
 }
