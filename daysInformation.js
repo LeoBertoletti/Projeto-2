@@ -1,9 +1,10 @@
+var dataGlobal
 function getWeather(lat, lon) {
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,weathercode&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,windspeed_10m_max,apparent_temperature_max&current_weather=true&past_days=92&forecast_days=16&timezone=auto`;
-
   fetch(url)
     .then(response => response.json())
     .then(data => {
+      dataGlobal = data
       let cardIndex = 0
       const slider = document.getElementById("slider")
       const days = data.daily.time
@@ -33,6 +34,9 @@ function getWeather(lat, lon) {
                                  </div>`
         let cardDiv = document.createElement("div")
         cardDiv.className = "card"
+        cardDiv.onclick = function () {
+          mainCard(dataGlobal, this.id);
+        };
         cardDiv.id = `card-${cardIndex}`
         cardDiv.innerHTML = cardHTMLContent
         slider.appendChild(cardDiv)
