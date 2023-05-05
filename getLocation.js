@@ -9,7 +9,7 @@ function getLocation() {
       const lon = data[0].lon;
       getWeather(lat, lon);
     })
-    .catch(error => console.error(error));
+    .catch(error => alert("Cidade não existe"));
 }
 
 
