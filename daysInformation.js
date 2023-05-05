@@ -12,13 +12,12 @@ function getWeather(lat, lon) {
       const dailyMax = data.daily.temperature_2m_max
       const dailyMin = data.daily.temperature_2m_min
       const week = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
-      const climas = ['Céu limpo', 'Principalmente limpo', 'Parcialmente nublado', 'Encoberto', 'Névoa', 'Névoa gelada', 'Garoa leve', 'Garoa moderada', 'Garoa densa', 'Garoa congelante leve', 'Garoa congelante densa', 'Chuva fraca', 'Chuva moderada', 'Chuva forte', 'Chuva congelante leve', 'Chuva congelante forte', 'Queda de neve fraca', 'Queda de neve moderada', 'Queda de neve forte', 'Grãos de neve', 'Chuva forte leve', 'Chuva forte moderada', 'Chuva forte violenta', 'Neve fraca', 'Neve forte', 'Trovoada leve ou moderada', 'Trovoada com queda de granizo leve', 'Trovoada com queda de granizo forte']
 
       days.forEach(element => {
         var maxTemp = dailyMax[cardIndex]
         var minTemp = dailyMin[cardIndex]
         var day = days[cardIndex]
-        var code = dailyCode[cardIndex]
+        var code = getWeatherDescription(dailyCode[cardIndex])
 
         day = week[new Date(day).getDay()]
 
@@ -39,6 +38,7 @@ function getWeather(lat, lon) {
         slider.appendChild(cardDiv)
         cardIndex++
       });
+      mainCard(data, 92)
       document.getElementById("card-92").scrollIntoView({
         behavior: 'auto',
         block: 'center',

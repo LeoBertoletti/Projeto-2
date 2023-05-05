@@ -33,9 +33,3 @@ const getData = async (lat, lon) => {
     dataGlobal = data;
     return data;
 }
-
-const getWeekday = (day) => {
-    const week = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
-    day = week[new Date(day).getDay()]
-    return day
-}
