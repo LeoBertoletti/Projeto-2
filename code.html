@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+
 </head>
 
 <body>
@@ -33,7 +34,7 @@
         </div>
 
 
-        <button type="button" class="collapsible"><img src="Sources/icones/seta.png" id="arrow"></button>
+        <button type="button" class="collapsible"><img src="Sources/icones/arrow.png" id="arrow"></button>
         <div class="content">
             <p>Vento:
                 velocidade:
@@ -61,8 +62,11 @@
                 var content = this.nextElementSibling;
                 if (content.style.display === "block") {
                     content.style.display = "none";
+                    console.log(document.getElementById("main_box"))
+                    document.getElementById("main_box").style.borderRadius = "16px"
                 } else {
                     content.style.display = "block";
+                    document.getElementById("main_box").style.borderRadius = "16px 16px 0px 0px"
                 }
             });
         }
