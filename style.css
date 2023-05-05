@@ -140,7 +140,8 @@ button {
     overflow-x: auto;
 }
 
-.container-slide::-webkit-scrollbar {
+.container-slide::-webkit-scrollbar,
+#slider::-webkit-scrollbar {
     display: none;
 }
 

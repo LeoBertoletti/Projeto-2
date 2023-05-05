@@ -11,7 +11,7 @@ function getWeather(lat, lon) {
       const dailyCode = data.daily.weathercode
       const dailyMax = data.daily.temperature_2m_max
       const dailyMin = data.daily.temperature_2m_min
-      const week = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+      const week = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
 
       days.forEach(element => {
         var maxTemp = dailyMax[cardIndex]
