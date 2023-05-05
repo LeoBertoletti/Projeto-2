@@ -1,6 +1,9 @@
 (async () => {
     const search = document.getElementById("search")
-    await getData()
-    await createCards(dataGlobal)
-    search.addEventListener("change", getLocation(search.value))
+
+    search.addEventListener("keydown", function (e) {
+        if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+            getLocation(search.value)
+        }
+    });
 })();
