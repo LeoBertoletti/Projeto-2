@@ -18,8 +18,7 @@ function getWeather(lat, lon) {
         var minTemp = dailyMin[cardIndex]
         var day = days[cardIndex]
         var code = getWeatherDescription(dailyCode[cardIndex])
-        console.log(cardIndex)
-        if (cardIndex >= 87 && cardIndex <= 97) {
+        if (cardIndex >= 87 && cardIndex <= 99) {
           day = week[new Date(day).getDay()]
         }
         if (cardIndex === 92) {
@@ -27,7 +26,7 @@ function getWeather(lat, lon) {
         }
 
         const cardHTMLContent = `<h1 id="dia_${cardIndex}">${day}</h1>
-                                 <img class="cardIcon" id="img_${cardIndex}" src="Sources/chuva.png">
+                                 <img class="cardIcon" id="img_${cardIndex}" src=http://127.0.0.1:3000/Sources/icones/${code}.png>
                                  <div id="card_temps">
                                  <h2 id="min_${cardIndex}">${Math.round(maxTemp)}º</h2>
                                  <h2 id="max_${cardIndex}" style="color:rgb(163, 216, 232);">${Math.round(minTemp)}º</h2>
