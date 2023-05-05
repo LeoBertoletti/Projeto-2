@@ -202,12 +202,15 @@ button {
     font-size: medium;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 0 2rem;
+    justify-content: space-evenly;
 }
 
 .cardIcon {
     max-width: 50%;
+}
+
+.more-content {
+    display: flex;
 }
 
 .card {
@@ -215,8 +218,7 @@ button {
     font-size: 58%;
     margin-left: 0.1%;
     border-radius: 16px;
-    height: 200px;
-    width: 150px;
+    width: 160px;
     background-color: rgba(21, 21, 21, 0.71);
     text-align: center;
     border: 4px;
