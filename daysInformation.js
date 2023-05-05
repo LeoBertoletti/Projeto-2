@@ -19,7 +19,7 @@ function getWeather(lat, lon) {
         var day = days[cardIndex]
         var code = getWeatherDescription(dailyCode[cardIndex])
         console.log(cardIndex)
-        if (cardIndex > 87 && cardIndex < 97) {
+        if (cardIndex >= 87 && cardIndex <= 97) {
           day = week[new Date(day).getDay()]
         }
         if (cardIndex === 92) {
