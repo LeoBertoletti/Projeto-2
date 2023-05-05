@@ -209,10 +209,6 @@ button {
     max-width: 50%;
 }
 
-.content {
-    display: flex;
-}
-
 .card {
     color: white;
     font-size: 58%;
