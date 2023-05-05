@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+
 </head>
 
 <body>
@@ -20,7 +21,7 @@
     <div id="main_box">
         <div style="padding-top: 2%;">
             <div id="main_tempmin" style="font-weight: bold;">-</div>
-            <img id="img_temp" src="Sources/icones/Chuva.png">
+            <img id="img_temp" src="Sources/icones/rain.png">
             <div id="main_tempmax">-</div>
         </div>
 
@@ -31,19 +32,19 @@
             <div id="main_local">-</divi>
             </div>
         </div>
+        
 
-
-        <button type="button" class="collapsible"><img src="Sources/icones/seta.png" id="arrow"></button>
-        <div class="content">
-            <p>Vento:
+        <button type="button" class="collapsible"><img src="Sources/icones/arrow.png" id="arrow"></button>
+            <div class="content">
+             <p>Vento: 
                 velocidade:
-                temp max:
-            <p>teste
-            <p>teste</p>
-            <p>teste</p>
-            </p>
-            </p>
-        </div>
+                temp max: 
+                <p>teste
+                    <p>teste</p>
+                        <p>teste</p>
+                </p>
+             </p>
+            </div>
     </div>
     <div class="container-slide">
         <div id="slider">
@@ -51,22 +52,25 @@
     </div>
     <div id="source-div"><a href="https://open-meteo.com/" id="source">Weather data by Open-Meteo.com</a></div>
 
-    <script>
+        <script>
         var coll = document.getElementsByClassName("collapsible");
         var i;
-
+        
         for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+              console.log(document.getElementById("main_box"))
+              document.getElementById("main_box").style.borderRadius = "16px"
+            } else {
+              content.style.display = "block";
+              document.getElementById("main_box").style.borderRadius = "16px 16px 0px 0px"
+            }
+          });
         }
-    </script>
+        </script>
     <script src="getDataAPI.js"></script>
     <script src="createCards.js"></script>
     <script src="getLocation.js"></script>
