@@ -1,5 +1,4 @@
 mainCard = (data, id) => {
-    debugger
     var day = data.daily.time[id]
     const dayCode = data.daily.weathercode[id]
     const currentTemp = data.current_weather.temperature

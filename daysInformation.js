@@ -6,21 +6,22 @@ function getWeather(lat, lon) {
     .then(data => {
       let cardIndex = 0
       const slider = document.getElementById("slider")
-      slider.innerHTML = ""
       const days = data.daily.time
       const dailyCode = data.daily.weathercode
       const dailyMax = data.daily.temperature_2m_max
       const dailyMin = data.daily.temperature_2m_min
       const week = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
+      slider.innerHTML = ""
 
       days.forEach(element => {
         var maxTemp = dailyMax[cardIndex]
         var minTemp = dailyMin[cardIndex]
         var day = days[cardIndex]
         var code = getWeatherDescription(dailyCode[cardIndex])
-
-        day = week[new Date(day).getDay()]
-
+        console.log(cardIndex)
+        if (cardIndex > 87 && cardIndex < 97) {
+          day = week[new Date(day).getDay()]
+        }
         if (cardIndex === 92) {
           day = "Hoje"
         }
