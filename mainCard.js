@@ -19,7 +19,11 @@ mainCard = (data, id) => {
     document.getElementById("main_tempmin").innerText = Math.round(dayMax) + "º"
     document.getElementById("main_tempmax").innerText = Math.round(dayMin) + "º"
     document.getElementById("img_temp").src = `Sources/icones/${dayCode}.png`
-    document.getElementById("main_local").innerText = locationData.display_name.split(",")[0]
+    try {
+        document.getElementById("main_local").innerText = locationData.display_name.split(",")[0]
+    } catch (error) {
+        console.error(error)
+    }
 
     document.getElementById(`card-${id}`).scrollIntoView({
         behavior: 'auto',
