@@ -4,7 +4,6 @@ function getLocationAuto() {
             (position) => {
                 const lat = position.coords.latitude;
                 const lng = position.coords.longitude;
-                console.log(position)
                 getWeather(lat, lng)
             },
             (error) => {

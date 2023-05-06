@@ -4,8 +4,14 @@ mainCard = (data, id) => {
     var currentTemp = data.current_weather.temperature
     const dayMax = data.daily.temperature_2m_max[id]
     const dayMin = data.daily.temperature_2m_min[id]
-    const city = document.getElementById("search").value
     const week = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
+
+    fetch(`https://nominatim.openstreetmap.org/reverse?lat=${dataGlobal.latitude}&lon=${dataGlobal.longitude}&format=json&zoom=18`)
+        .then(response => response.json())
+        .then(dataLocal => {
+            document.getElementById("main_local").innerText = dataLocal.address.city
+        })
+        .catch(error => alert("Cidade não existe"));
 
     if (id != 92) {
         currentTemp = dayMax
@@ -16,7 +22,6 @@ mainCard = (data, id) => {
     document.getElementById("main_date").innerText = day
     document.getElementById("main_temp").innerText = Math.round(currentTemp) + "º"
     document.getElementById("main_weather").innerText = getWeatherDescription(dayCode)
-    document.getElementById("main_local").innerText = city
     document.getElementById("main_tempmin").innerText = Math.round(dayMax) + "º"
     document.getElementById("main_tempmax").innerText = Math.round(dayMin) + "º"
     dayCode = getWeatherDescription(dayCode)
