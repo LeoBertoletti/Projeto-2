@@ -6,13 +6,6 @@ mainCard = (data, id) => {
     const dayMin = data.daily.temperature_2m_min[id]
     const week = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
 
-    fetch(`https://nominatim.openstreetmap.org/reverse?lat=${dataGlobal.latitude}&lon=${dataGlobal.longitude}&format=json&zoom=18`)
-        .then(response => response.json())
-        .then(dataLocal => {
-            document.getElementById("main_local").innerText = dataLocal.address.city
-        })
-        .catch(error => alert("Cidade não existe"));
-
     if (id != 92) {
         currentTemp = dayMax
     }
