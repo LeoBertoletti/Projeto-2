@@ -213,14 +213,14 @@ button {
     background-color: rgba(21, 21, 21, 0.71);
     text-align: center;
     border: 4px;
-    border-color: rgba(255, 255, 255, 0);
+    border-color: #ffffff00;
     border-style: solid;
 }
 
 #img_temp,
 .cardIcon {
     filter: invert();
-    
+
 }
 
 @keyframes card_hover {
@@ -228,7 +228,6 @@ button {
         border: 4px;
         border-color: #a3d8e8;
         border-style: solid;
-        filter: blur(2px);
     }
 }
 

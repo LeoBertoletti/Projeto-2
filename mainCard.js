@@ -6,7 +6,7 @@ mainCard = (data, id) => {
     const dayMin = data.daily.temperature_2m_min[id]
     const week = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
 
-    if (id != 92) {
+    if (id != 5) {
         currentTemp = dayMax
     }
 
@@ -19,6 +19,7 @@ mainCard = (data, id) => {
     document.getElementById("main_tempmin").innerText = Math.round(dayMax) + "º"
     document.getElementById("main_tempmax").innerText = Math.round(dayMin) + "º"
     document.getElementById("img_temp").src = `Sources/icones/${dayCode}.png`
+
     try {
         document.getElementById("main_local").innerText = locationData.display_name.split(",")[0]
     } catch (error) {
