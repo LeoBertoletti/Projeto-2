@@ -16,7 +16,6 @@
         lastCard.style.borderColor = "#ffffff00"
         currentCard = document.getElementById(`card-${currentCard}`)
         currentCard.style.borderColor = "#a3d8e8"
-
     }
     selectedCard(currentCard, lastCard)
 })();
