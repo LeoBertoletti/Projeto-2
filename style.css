@@ -32,7 +32,6 @@
     margin-bottom: 1%;
     margin-top: 2%;
     font-size: 13px;
-    width: 50%;
     margin-left: 40%;
 }
 
@@ -81,6 +80,7 @@
     font-size: 20px;
     margin-top: 2%;
     color: rgba(164, 239, 239, 0.975);
+    width: 10%;
 }
 
 #main_tempmin {
@@ -90,6 +90,7 @@
     font-size: 20px;
     margin-top: 2%;
     padding-left: 5%;
+    width: 10%;
 }
 
 #img_temp {
