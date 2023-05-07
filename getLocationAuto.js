@@ -8,7 +8,7 @@ function getLocationAuto() {
                 fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&zoom=18`)
                     .then(response => response.json())
                     .then(dataLocal => {
-                        document.getElementById("main_local").innerText = dataLocal.address.city
+                        document.getElementById("main_local").innerText = dataLocal.address.city_district
                     })
                     .catch(error => alert("Cidade não existe"));
 
