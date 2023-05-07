@@ -23,8 +23,8 @@ createCards = (data) => {
         const cardHTMLContent = `<h1 id="dia_${cardIndex}">${day}</h1>
                                  <img class="cardIcon" id="img_${cardIndex}" src="Sources/icones/${code}.png">
                                  <div id="card_temps">
-                                 <h2 id="min_${cardIndex}">${Math.round(maxTemp)}º</h2>
-                                 <h2 id="max_${cardIndex}" style="color:rgb(163, 216, 232);">${Math.round(minTemp)}º</h2>
+                                 <h2 id="min_${cardIndex}">${Math.round(maxTemp)}Cº</h2>
+                                 <h2 id="max_${cardIndex}" style="color:rgb(163, 216, 232);">${Math.round(minTemp)}Cº</h2>
                                  </div>`
         let cardDiv = document.createElement("div")
         cardDiv.className = "card"
