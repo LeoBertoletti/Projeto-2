@@ -43,6 +43,7 @@ mainCard = (data, id) => {
         block: 'center',
         inline: 'center'
     });
+    setTheme(dataGlobal)
     document.getElementById(`card-${id}`).style.borderColor = "#a3d8e8"
     lastCard = id
 }

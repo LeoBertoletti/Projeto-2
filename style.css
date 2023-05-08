@@ -21,7 +21,6 @@
     font-size: larger;
 }
 
-
 #texto-box {
     display: flex;
     text-align: left;
@@ -53,7 +52,7 @@
 
 .content {
     padding: 0 30px;
-    display: flex;
+    display: none;
     overflow: hidden;
     color: white;
     background-color: rgba(0, 0, 0, 0.71);
@@ -63,7 +62,6 @@
     position: absolute;
     max-width: 89.4%;
     border-radius: 0px 0px 16px 16px;
-    justify-content: space-around;
 }
 
 #main_tempmax {
@@ -109,7 +107,7 @@
     margin-top: 2%;
 }
 
-button {
+#more_button {
     width: fit-content;
     align-items: center;
     background-color: transparent;
@@ -120,6 +118,15 @@ button {
     margin-left: 5%;
 }
 
+#next,
+#previous {
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 95px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 8%;
+}
 
 #top {
     display: flex;

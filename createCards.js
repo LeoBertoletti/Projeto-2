@@ -38,3 +38,24 @@ createCards = (data) => {
     });
 }
 
+function nextCard(id) {
+    document.getElementById(`card-${id}`).style.borderColor = "#ffffff00"
+    document.getElementById(`card-${id + 1}`).scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center'
+    });
+    document.getElementById(`card-${id + 1}`).style.borderColor = "#a3d8e8"
+    lastCard = id + 1
+}
+
+function previousCard(id) {
+    document.getElementById(`card-${id}`).style.borderColor = "#ffffff00"
+    document.getElementById(`card-${id - 1}`).scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center'
+    });
+    document.getElementById(`card-${id - 1}`).style.borderColor = "#a3d8e8"
+    lastCard = id - 1
+}

@@ -15,4 +15,22 @@ function getLocation() {
     .catch(error => alert("Cidade não existe"));
 }
 
-
+function setTheme(data) {
+  let is_day = data.current_weather.is_day
+  let weather = data.current_weather.weathercode
+  const imagem = document.getElementById("background-image")
+  if (is_day == 1 && weather >= 51) { // dia chuva
+    imagem.style.backgroundImage = "url('Sources/gifs/chuva-dia.gif')"
+    document.getElementById("main_text").style.color = "black"
+  } else if (is_day == 1 && weather < 51) { // dia sem chuva
+    imagem.style.backgroundImage = "url('Sources/gifs/ceu limpo dia slow.gif')"
+    document.getElementById("main_text").style.color = "white"
+  } else if (is_day == 0 && weather >= 51) { // noite chuva
+    imagem.style.backgroundImage = "url('Sources/gifs/chuva-dia.gif')"
+  } else { // noite sem chuva
+    imagem.style.backgroundImage = "url('Sources/gifs/ceu noite slow.gif')"
+    document.getElementById("main_text").style.color = "white"
+    document.getElementById("next").style.color = "white"
+    document.getElementById("previous").style.color = "white"
+  }
+}
