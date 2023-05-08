@@ -24,9 +24,10 @@ function setTheme(data) {
     document.getElementById("main_text").style.color = "black"
   } else if (is_day == 1 && weather < 51) { // dia sem chuva
     imagem.style.backgroundImage = "url('Sources/gifs/ceu limpo dia slow.gif')"
-    document.getElementById("main_text").style.color = "white"
+    document.getElementById("main_text").style.color = "black"
   } else if (is_day == 0 && weather >= 51) { // noite chuva
     imagem.style.backgroundImage = "url('Sources/gifs/chuva-dia.gif')"
+    document.getElementById("main_text").style.color = "black"
   } else { // noite sem chuva
     imagem.style.backgroundImage = "url('Sources/gifs/ceu noite slow.gif')"
     document.getElementById("main_text").style.color = "white"
