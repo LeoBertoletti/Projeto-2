@@ -4,17 +4,16 @@
     font-family: 'poppins', sans-serif;
 }
 
-.background-image {
+#background-image {
     position: fixed;
     left: 0;
     right: 0;
     z-index: -1;
     display: block;
-    background-image: url("Sources/gifs/ezgif-2-3ec8087623.gif");
     background-size: cover;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
-    filter: blur(3px);
+    filter: blur(5px);
 }
 
 #main_temp {
@@ -106,7 +105,6 @@
     max-width: 5.5%;
     margin-bottom: -1%;
     transform: rotate(deg);
-    filter: invert();
     margin-top: 2%;
 }
 
@@ -178,6 +176,7 @@ button {
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: 10px;
     width: 170px;
+    padding-top: 8%;
     padding-left: 15%;
     padding-right: 15%;
     margin-left: auto;
@@ -216,7 +215,6 @@ button {
 #img_temp,
 .cardIcon {
     filter: invert();
-
 }
 
 @keyframes card_hover {

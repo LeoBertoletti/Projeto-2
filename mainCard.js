@@ -1,4 +1,6 @@
+var lastCard = 0
 mainCard = (data, id) => {
+    document.getElementById(`card-${lastCard}`).style.borderColor = "#ffffff00"
     var day = data.daily.time[id]
     var dayCode = data.daily.weathercode[id]
     var currentTemp = data.current_weather.temperature
@@ -12,6 +14,8 @@ mainCard = (data, id) => {
 
     if (id != 5) {
         currentTemp = dayMax
+    } else {
+        dayCode = data.current_weather.weathercode
     }
 
     day = week[new Date(day).getDay()]
@@ -24,7 +28,7 @@ mainCard = (data, id) => {
     document.getElementById("main_tempmax").innerText = Math.round(dayMin) + "ºC"
     document.getElementById("img_temp").src = `Sources/icones/${dayCode}.png`
     document.getElementById("wind").innerText = `Vento: ${wind}km/h`
-    document.getElementById("feels-like").innerText = `Sensação Térmica: ${feelsLike}ºC`
+    document.getElementById("feels-like").innerText = `Sensação Térmica: ${Math.round(feelsLike)}ºC`
     document.getElementById("sunrise").innerText = `Nascer do Sol: ${sunrise.split("T")[1]}`
     document.getElementById("sunset").innerText = `Por do Sol: ${sunset.split("T")[1]}`
 
@@ -35,8 +39,10 @@ mainCard = (data, id) => {
     }
 
     document.getElementById(`card-${id}`).scrollIntoView({
-        behavior: 'auto',
+        behavior: 'smooth',
         block: 'center',
         inline: 'center'
     });
+    document.getElementById(`card-${id}`).style.borderColor = "#a3d8e8"
+    lastCard = id
 }

@@ -37,7 +37,7 @@ function getWeatherDescription(weatherCode) {
     case 86:
       return "Neve forte";
     case 95:
-      return "Tempestade com leve intensidade";
+      return "Tempestade leve";
     case 96:
     case 99:
       return "Tempestade com granizo";
