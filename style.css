@@ -51,6 +51,7 @@
 }
 
 .content {
+    font-size: 65%;
     padding: 0 30px;
     display: none;
     overflow: hidden;
@@ -63,6 +64,8 @@
     max-width: 89.4%;
     border-radius: 0px 0px 16px 16px;
 }
+
+
 
 #main_tempmax {
     display: inline;
@@ -185,8 +188,8 @@
     scroll-padding-inline: 10px;
     width: 170px;
     padding-top: 8%;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 48%;
+    padding-right: 25%;
     margin-left: auto;
     margin-right: auto;
 }
