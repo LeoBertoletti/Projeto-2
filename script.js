@@ -10,13 +10,10 @@
         }
     });
 
-    await new Promise(r => setTimeout(r, 700));
-
     function setTheme(data) {
         let is_day = data.current_weather.is_day
         let weather = data.current_weather.weathercode
         const imagem = document.getElementById("background-image")
-        debugger
         if (is_day == 1 && weather >= 51) { // dia chuva
             imagem.style.backgroundImage = "url('Sources/gifs/chuva-dia.gif')"
             document.getElementById("main_text").style.color = "black"
@@ -30,6 +27,7 @@
             document.getElementById("main_text").style.color = "white"
         }
     }
+
     setTheme(dataGlobal)
 
 })();
