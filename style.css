@@ -164,30 +164,28 @@ button {
     position: relative;
 }
 
-.container-slide {
-    max-width: 45vw;
-    overflow-x: auto;
-    margin-top: 8%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .container-slide::-webkit-scrollbar,
 #slider::-webkit-scrollbar {
     display: none;
 }
 
 #slider {
-    background-color: transparent;
-    display: flex;
-    box-sizing: border-box;
-    text-align: center;
-    align-items: center;
-    overflow-x: auto;
-    width: max-content;
-    gap: 5px;
-    min-height: 210px;
-    margin-top: 1%;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 5%;
+    overflow-x: scroll;
+    overscroll-behavior-inline: auto;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 10px;
+    width: 170px;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#slider>* {
+    scroll-snap-align: middle;
 }
 
 #card_temps {
@@ -212,6 +210,7 @@ button {
     border: 4px;
     border-color: #ffffff00;
     border-style: solid;
+    scroll-snap-align: center;
 }
 
 #img_temp,
