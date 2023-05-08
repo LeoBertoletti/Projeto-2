@@ -6,16 +6,30 @@
     search.addEventListener("keydown", function (e) {
         if (e.code === "Enter") {
             getLocation()
+            setTheme(dataGlobal)
         }
     });
 
-    await new Promise(r => setTimeout(r, 1000));
+    await new Promise(r => setTimeout(r, 700));
 
-    function selectedCard(currentCard, lastCard) {
-        lastCard = document.getElementById(`card-${lastCard}`)
-        lastCard.style.borderColor = "#ffffff00"
-        currentCard = document.getElementById(`card-${currentCard}`)
-        currentCard.style.borderColor = "#a3d8e8"
+    function setTheme(data) {
+        let is_day = data.current_weather.is_day
+        let weather = data.current_weather.weathercode
+        const imagem = document.getElementById("background-image")
+        debugger
+        if (is_day == 1 && weather >= 51) { // dia chuva
+            imagem.style.backgroundImage = "url('Sources/gifs/chuva-dia.gif')"
+            document.getElementById("main_text").style.color = "black"
+        } else if (is_day == 1 && weather < 51) { // dia sem chuva
+            imagem.style.backgroundImage = "url('Sources/gifs/ceu limpo dia.gif')"
+            document.getElementById("main_text").style.color = "white"
+        } else if (is_day == 0 && weather >= 51) { // noite chuva
+            imagem.style.backgroundImage = "url('Sources/gifs/chuva-dia.gif')"
+        } else {
+            imagem.style.backgroundImage = "url('Sources/gifs/ezgif.com-gif-maker.gif')"
+            document.getElementById("main_text").style.color = "white"
+        }
     }
-    selectedCard(currentCard, lastCard)
+    setTheme(dataGlobal)
+
 })();
