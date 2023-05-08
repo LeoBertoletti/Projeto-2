@@ -34,7 +34,8 @@
         </div>
 
 
-        <button type="button" class="collapsible"><img src="Sources/icones/seta1.png" id="arrow"></button>
+        <button type="button" class="collapsible" id="more_button"><img src="Sources/icones/seta1.png"
+                id="arrow"></button>
         <div class="content">
             <div>
                 <p id="feels-like">-</p>
@@ -46,8 +47,13 @@
             </div>
         </div>
     </div>
-    <div id="slider">
+    <div style="display: flex;">
+        <button onclick="previousCard(lastCard)" id="next">&lt</button>
+        <div id="slider">
+        </div>
+        <button onclick="nextCard(lastCard)" id="previous">&gt</button>
     </div>
+
     <div id="source-div"><a href="https://open-meteo.com/" id="source">Weather data by Open-Meteo.com</a></div>
 
     <script>
@@ -65,7 +71,7 @@
                 } else {
                     content.style.display = "block";
                     document.getElementById("main_box").style.borderRadius = "16px 16px 0px 0px"
-                    content.style.display = "flex";
+                    content.style.justifyContent = "center"
                 }
             });
         }
@@ -74,7 +80,6 @@
     <script src="createCards.js"></script>
     <script src="getLocationAuto.js"></script>
     <script src="getWeather.js"></script>
-    <script src="getWeatherDescription.js"></script>
     <script src="mainCard.js"></script>
     <script src="script.js"></script>
 </body>
