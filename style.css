@@ -256,3 +256,23 @@
 #arrow {
     width: 40px;
 }
+
+#feels-like {
+    margin-top: 2%;
+    font-size: 160%;
+}
+
+#wind {
+    font-size: 160%;
+}
+
+#sunrise {
+    padding-left: 60%;
+    margin-top: -16.5%;
+    font-size: 160%;
+}
+
+#sunset {
+    padding-left: 60%;
+    font-size: 160%;
+}
